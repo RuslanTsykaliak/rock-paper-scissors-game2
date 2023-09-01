@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <!-- Link to Google Fonts stylesheet for the 'Montserrat' font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <!-- Link to an external JavaScript file with the 'module' type -->
+    <script src="js/main.js" type="module"></script>
+    <!-- https://favicon.io/favicon-converter/ -->
+    <link rel="icon" href="img/favicon.ico" />
+  </head>
+
+  <body>
+    <main>
+      <!-- Main heading with tabindex for accessibility -->
+      <h1 class="center" tabindex="0">Rock Paper Scissors</h1>
+      <!-- Skip link for accessibility, allows skipping to the scoreboard -->
+      <a href="#p1msg" class="skip-link">Skip Scoreboard</a>
+
+      <!-- Scoreboard section -->
+      <section id="scoreboard" class="scoreboard">
+        <!-- Heading for the scoreboard (offscreen for accessibility) -->
+        <h2 class="offscreen">Scoreboard</h2>
+        <!-- All Time Scoreboard section -->
+        <section id="all_time" class="scoreboard__section">
+          <!-- Heading for the All Time Scoreboard (offscreen for accessibility) -->
+          <h3 class="offscreen">All Time Scoreboard</h3>
+          <!-- Header row for the All Time Scoreboard -->
+          <div class="scoreboard__header" aria-hidden="true">
+            <p><abbr title="Player One">P1</abbr></p>
+            <p>All Time</p>
+            <p><abbr title="Computer Player">CP</abbr></p>
+          </div>
+          <!-- Row for displaying All Time scores -->
+          <div class="scoreboard__row" role="row">
+            <!-- Player One's All Time score -->
+            <div
+              id="p1_all_time_score"
+              class="scoreboard__score center"
+              role="cell"
+              aria-label="Player One All Time Wins"
+              tabindex="0"
+            >
+              0
+            </div>
+            <!-- Computer Player's All Time score -->
+            <div
+              id="cp_all_time_score"
+              class="scoreboard__score center"
+              role="cell"
+              aria-label="Computer Player All Time Wins"
+              tabindex="0"
+            >
+              0
+            </div>
+          </div>
+        </section>
+
+        <!-- Session Scoreboard section -->
+        <section id="session" class="scoreboard__section">
+          <!-- Heading for the Session Scoreboard (offscreen for accessibility) -->
+          <h3 class="offscreen">Session Scoreboard</h3>
+          <!-- Header row for the Session Scoreboard -->
+          <div class="scoreboard__header" aria-hidden="true">
+            <p><abbr title="Player One">P1</abbr></p>
+            <p>Session</p>
+            <p><abbr title="Computer Player">CP</abbr></p>
+          </div>
+          <!-- Row for displaying Session scores -->
+          <div class="scoreboard__row" role="row">
+            <!-- Player One's Session score -->
+            <div
+              id="p1_session_score"
+              class="scoreboard__score center"
+              role="cell"
+              aria-label="Player One Wins This Session"
+              tabindex="0"
+            >
+              0
+            </div>
+            <!-- Computer Player's Session score -->
+            <div
+              id="cp_session_score"
+              class="scoreboard__score center"
+              role="cell"
+              aria-label="Computer Player Wins This Session"
+              tabindex="0"
+            >
+              0
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Player Board section -->
+      <section id="playerBoard" class="playerBoard">
+        <!-- Heading for Player One's selection with tabindex for accessibility -->
+        <h2
+          id="p1msg"
+          class="center"
+          aria-label="Player One Chooses"
+          tabindex="0"
+        >
+          Player One Chooses...
+        </h2>
+        <!-- Gameboard for Player One's choices -->
+        <div id="gameboard" class="gameboard">
+          <!-- Rock choice -->
+          <div id="rock" class="gameboard__square">
+            <img src="img/rock.png" alt="select rock" tabindex="0" />
+          </div>
+          <!-- Paper choice -->
+          <div id="paper" class="gameboard__square">
+            <img src="img/paper.png" alt="select paper" tabindex="0" />
+          </div>
+          <!-- Scissors choice -->
+          <div id="scissors" class="gameboard__square">
+            <img src="img/scissors.png" alt="select scissors" tabindex="0" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Computer Board section -->
+      <section id="computerBoard" class="computerBoard">
+        <!-- Heading for Computer Player's selection (no tabindex) -->
+        <h2 id="cpmsg" class="center" aria-label="Computer Chooses">
+          Computer Chooses...
+        </h2>
+        <!-- Gameboard for Computer Player's choices -->
+        <div id="cp_gameboard" class="gameboard">
+          <!-- Rock choice for Computer Player -->
+          <div id="cp_rock" class="gameboard__square">
+            <img src="img/rock.png" alt="rock" />
+          </div>
+          <!-- Paper choice for Computer Player -->
+          <div id="cp_paper" class="gameboard__square">
+            <img src="img/paper.png" alt="paper" />
+          </div>
+          <!-- Scissors choice for Computer Player -->
+          <div id="cp_scissors" class="gameboard__square">
+            <img src="img/scissors.png" alt="scissors" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Form with a "Play Again" button (hidden by default) -->
+    <form>
+      <button id="playAgain" type="submit" class="playAgain hidden">
+        Play Again?
+      </button>
+    </form>
+  </body>
+</html>
